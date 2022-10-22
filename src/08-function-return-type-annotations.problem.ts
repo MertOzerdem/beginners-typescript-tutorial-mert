@@ -1,4 +1,5 @@
 import { expect, it } from "vitest";
+import { number } from "zod";
 
 interface User {
   id: number;
@@ -17,8 +18,8 @@ interface Post {
  * How do we ensure that makeUser ALWAYS
  * returns a user?
  */
-const makeUser = () => {
-  return {};
+const makeUser = (): User => {
+  return { firstName: 'mert', id: 1, lastName: 'öz', role: 'admin', posts: [{ id: 1, title: 'post' }] };
 };
 
 it("Should return a valid user", () => {

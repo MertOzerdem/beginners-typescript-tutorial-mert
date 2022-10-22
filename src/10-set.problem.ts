@@ -1,7 +1,7 @@
 import { expect, it } from "vitest";
 import { Equal, Expect } from "./helpers/type-utils";
 
-const guitarists = new Set();
+const guitarists = new Set<string>();
 
 guitarists.add("Jimi Hendrix");
 guitarists.add("Eric Clapton");
@@ -17,7 +17,7 @@ it("Should give a type error when you try to pass a non-string", () => {
 });
 
 it("Should be typed as an array of strings", () => {
-  const guitaristsAsArray = Array.from(guitarists);
+  const guitaristsAsArray = Array.from<string>(guitarists);
 
   type tests = [Expect<Equal<typeof guitaristsAsArray, string[]>>];
 });
